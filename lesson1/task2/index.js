@@ -47,7 +47,7 @@ const element = React.createElement(
     React.createElement(
       'p',
       { className: 'greeting__text' },
-      "I'am learning React"
+      'I\'m learning React'
     ),
 )
 
