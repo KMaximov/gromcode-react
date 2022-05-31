@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import moment from 'moment';
 import './clock.scss';
 
-const getTimeWithOffset = time => {
-
-}
+const getTimeWithOffset = offset => new Date(new Date().setHours(new Date().getHours() + offset + new Date().getTimezoneOffset() / 60));
 
 class Clock extends Component {
   constructor(props) {
