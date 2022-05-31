@@ -5,12 +5,12 @@ import Greeting from './Greeting';
 
 const rootElement = document.querySelector('#root');
 
-const getFullYear = () => new Date().getFullYear() - new Date('2005-01-01T11:11:11.819Z').getFullYear()
+const userYearsOld = (birthday) => new Date().getFullYear() - new Date(birthday).getFullYear()
 
 const element = {
   firstName: 'John',
   lastName: 'Doe',
-  birthDate: getFullYear(),
+  yearsOld: userYearsOld('2005-01-01T11:11:11.819Z'),
 }
 
-ReactDOM.render(<Greeting firstName={element.firstName} lastName={element.lastName} birthDate={element.birthDate}/>, rootElement)
+ReactDOM.render(<Greeting firstName={element.firstName} lastName={element.lastName} birthDate={element.yearsOld}/>, rootElement)
