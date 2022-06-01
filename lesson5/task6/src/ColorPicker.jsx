@@ -6,29 +6,38 @@ const aqua = 'Aqua';
 const bisque = 'Bisque';
 
 class ColorPicker extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: '',
+    };
+  };
 
   hoverHandler = text => {  
-    const title = document.querySelector('.picker__title');
-    title.textContent = text;
-  }
+    this.setState ({
+      title: text,
+    });
+  };
 
   outHandler = () => {
-    const title = document.querySelector('.picker__title');
-    title.textContent = '';
-  }
+    this.setState ({
+      title: '',
+    });
+  };
 
   render() {
     return (
       <>
-        <div className="picker__title"></div>
+        <div className="picker__title">{this.state.title}</div>
         <div>
           <button className="picker__button picker__button_coral" onMouseEnter={() => this.hoverHandler(coral)} onMouseLeave={() => this.outHandler()}></button>
           <button className="picker__button picker__button_aqua" onMouseEnter={() => this.hoverHandler(aqua)} onMouseLeave={() => this.outHandler()}></button>
           <button className="picker__button picker__button_bisque" onMouseEnter={() => this.hoverHandler(bisque)} onMouseLeave={() => this.outHandler()}></button>
         </div>
       </>
-    )
-  }
+    );
+  };
 }
 
 export default ColorPicker;
