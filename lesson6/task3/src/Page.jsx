@@ -32,7 +32,7 @@ class Page extends Component {
           <button className="btn" onClick={() => this.setText(text2)}>
             Text 2
           </button>
-          <button className="btn" onClick={() => this.setText('')}>
+          <button className="btn" onClick={() => this.setText()}>
             Clear
           </button>
         </div>
