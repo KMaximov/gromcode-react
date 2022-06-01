@@ -9,6 +9,13 @@ const element = {
   firstName: 'John',
   lastName: 'Doe',
   yearsOld: new Date('2005-01-01T11:11:11.819Z'),
-}
+};
 
-ReactDOM.render(<Greeting firstName={element.firstName} lastName={element.lastName} birthDate={element.yearsOld}/>, rootElement)
+ReactDOM.render(
+  <Greeting
+    firstName={element.firstName}
+    lastName={element.lastName}
+    birthDate={element.yearsOld}
+  />,
+  rootElement,
+);

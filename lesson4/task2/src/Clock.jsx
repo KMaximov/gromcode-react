@@ -1,8 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import './clock.scss';
 
-const getTimeWithOffset = offset => new Date(new Date().setHours(new Date().getHours() + offset + new Date().getTimezoneOffset() / 60));
+const getTimeWithOffset = offset =>
+  new Date(
+    new Date().setHours(new Date().getHours() + offset + new Date().getTimezoneOffset() / 60),
+  );
 
 class Clock extends Component {
   constructor(props) {
@@ -11,17 +14,19 @@ class Clock extends Component {
       offset: props.offset,
     };
     setInterval(() => {
-      this.setState({
-      })
-    }, 1000)
+      this.setState({});
+    }, 1000);
   }
+
   render() {
     return (
       <div className="clock">
         <div className="clock__location">{this.props.location}</div>
-        <div className="clock__time">{moment(getTimeWithOffset(this.state.offset)).format("HH:mm:ss A")}</div>
+        <div className="clock__time">
+          {moment(getTimeWithOffset(this.state.offset)).format('HH:mm:ss A')}
+        </div>
       </div>
-    )
+    );
   }
 }
 

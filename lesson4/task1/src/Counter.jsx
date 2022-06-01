@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './counter.scss';
 
 class Counter extends Component {
@@ -9,12 +9,13 @@ class Counter extends Component {
     };
     setInterval(() => {
       this.setState({
-        counter: this.state.counter + 1
-      })
-    }, props.interval)
+        counter: this.state.counter + 1,
+      });
+    }, props.interval);
   }
+
   render() {
-    return <div className="counter">{this.state.counter}</div>
+    return <div className="counter">{this.state.counter}</div>;
   }
 }
 

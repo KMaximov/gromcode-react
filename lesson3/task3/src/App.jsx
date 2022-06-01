@@ -6,14 +6,8 @@ const userInfo = {
   avatarUrl: 'https://avatars3.githubusercontent.com/u10001',
 };
 
-const App = () => {
-  return (
-    <Comment  
-      author={userInfo} 
-      text='Good Job!' 
-      date={new Date('2019-01-01T11:32:19.566Z')} 
-    />
-  )
-};
+const App = () => (
+  <Comment author={userInfo} text="Good Job!" date={new Date('2019-01-01T11:32:19.566Z')} />
+);
 
 export default App;

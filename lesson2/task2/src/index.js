@@ -4,7 +4,7 @@ import './styles.css';
 
 const rootElement = document.querySelector('#root');
 const style = {
-  color: 'red', 
+  color: 'red',
   fontWeight: 700
 }
 const element = (
