@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Logaut = ({ onLogaut }) => <button onClick={onLogaut}>Logout</button>;
+const Logout = ({ onLogout }) => <button onClick={onLogout}>Logout</button>;
 
-export default Logaut;
+export default Logout;
