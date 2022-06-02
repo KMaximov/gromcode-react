@@ -6,12 +6,16 @@ import Offline from './Offline';
 // 2. в залежності від cтану відображати компоненту
 
 class Status extends React.Component {
-  state = {
-    isOnline: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOnline: props.isOnline,
+    };
+  }
 
   render() {
-    if (this.isOnline) {
+    if (this.state.isOnline) {
       return <Online></Online>;
     }
     return <Offline></Offline>;
