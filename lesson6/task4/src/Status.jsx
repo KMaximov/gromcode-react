@@ -11,7 +11,7 @@ class Status extends React.Component {
   };
 
   render() {
-    if (this.isStatus) {
+    if (this.isOnline) {
       return <Online></Online>;
     }
     return <Offline></Offline>;
