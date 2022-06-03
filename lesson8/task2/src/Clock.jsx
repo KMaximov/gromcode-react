@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class Clock extends Component {
   constructor(props) {
@@ -21,8 +22,20 @@ class Clock extends Component {
     clearInterval(this.interval);
   }
 
+  getTimeWithOffset = offset =>
+    new Date(
+      new Date().setHours(new Date().getHours() + offset + new Date().getTimezoneOffset() / 60),
+    );
+
   render() {
-    return <div>{this.state.date.toLocaleTimeString()}</div>;
+    return (
+      <div className="clock">
+        <div className="clock__location">{this.props.location}</div>
+        <div className="clock__time">
+          {moment(this.getTimeWithOffset(this.props.offset)).format('HH:mm:ss A')}
+        </div>
+      </div>
+    );
   }
 }
 
