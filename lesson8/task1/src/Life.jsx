@@ -18,7 +18,7 @@ class Life extends Component {
     // він вирішує запускати рендер чи ні
     // цей метод створений для оптимізації (тобто ми можем зупинити деякі рендери, якщо дані які змінились не впливають на відображення);
     // console.log(nextProps, nextState);
-    console.log('shouldComponentUpdate(nextProps, nextState):decide to render or not to render');
+    console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
     return true;
   }
 
