@@ -4,7 +4,7 @@ import Transactions from './Transaction';
 // 2. числа відформатувати за допомогою new Intl.NumberFormat локаль en-GB.
 // 3. відобразити кожен елемент вхідного массиву та задати значення key
 
-const TransactionList = ({ transactions }) => (
+const TransactionsList = ({ transactions }) => (
   <ul className="transactions">
     {transactions.map(elem => (
       <Transactions key={elem.id} {...elem} />
@@ -12,4 +12,4 @@ const TransactionList = ({ transactions }) => (
   </ul>
 );
 
-export default TransactionList;
+export default TransactionsList;
