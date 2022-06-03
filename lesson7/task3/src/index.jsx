@@ -8,7 +8,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Transaction from './TransactionsList';
+import TransactionList from './TransactionsList';
 
 const transactions = [
   {
@@ -39,4 +39,4 @@ const transactions = [
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Transaction transactions={transactions} />, rootElement);
+ReactDOM.render(<TransactionList transactions={transactions} />, rootElement);
