@@ -19,7 +19,7 @@ class Life extends Component {
     // цей метод створений для оптимізації (тобто ми можем зупинити деякі рендери, якщо дані які змінились не впливають на відображення);
     // console.log(nextProps, nextState);
     console.log('shouldComponentUpdate(nextProps, nextState):decide to render or not to render');
-    return nextProps.number % 2;
+    return true;
   }
 
   componentDidUpdate(prevProps, prevState) {
