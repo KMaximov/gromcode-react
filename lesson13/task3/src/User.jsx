@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+// компонента повинна повертати або jsx або null;
+const User = () => {
+  // input: any
+  // output: array(any, func)
+  const [userInfo, setUserInfo] = useState({
+    avatarUrl: null,
+    location: null,
+    name: null,
+  });
+  // console.log(useParams());
+  const { userId } = useParams();
+  // const userId = props.match.params.userId;
+  // input: func, array(змінні за якими ми слідкуємо)
+  // output: undefined
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${userId}`)
+      .then(response => response.json())
+      .then(res => {
+        console.log(res);
+        setUserInfo({
+          avatarUrl: res.avatar_url,
+          location: res.location,
+          name: res.name,
+        });
+      });
+  }, [userId]);
 
-const User = () => (
-  <div className="user">
-    <img
-      alt="User Avatar"
-      src="https://avatars1.githubusercontent.com/u/9919?v=4"
-      className="user__avatar"
-    />
-    <div className="user__info">
-      <span className="user__name">GitHub</span>
-      <span className="user__location">San Francisco,CA</span>
+  const { avatarUrl, location, name } = userInfo;
+
+  if (avatarUrl === null) {
+    return null;
+  }
+
+  return (
+    <div className="user">
+      <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
+      <div className="user__info">
+        <span className="user__name">{name}</span>
+        <span className="user__location">{location}</span>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default User;
